@@ -723,7 +723,6 @@ var _dataJsonDefault = parcelHelpers.interopDefault(_dataJson);
     try {
         const response = await fetch('data.json');
         const data = await response.json();
-        // Fetch data from the API
         const datasensor = data.map((item)=>({
                 sensor: item.sensor,
                 Temperature: item.Temperature,
@@ -732,7 +731,6 @@ var _dataJsonDefault = parcelHelpers.interopDefault(_dataJson);
         datasensor.forEach((item)=>{
             console.log(`Sensor: ${item.sensor}, Temperature: ${item.Temperature}, Humidity: ${item.Humidity}`);
         });
-        // Create the chart
         new (0, _autoDefault.default)(document.getElementById('data'), {
             type: 'line',
             data: {

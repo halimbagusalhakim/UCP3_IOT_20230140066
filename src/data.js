@@ -5,7 +5,7 @@ import jsonData from './data.json';
   try {
     const response = await fetch('data.json');
     const data = await response.json();
-    // Fetch data from the API
+   
     const datasensor = data.map(item => ({
       sensor: item.sensor,
         
@@ -16,7 +16,7 @@ import jsonData from './data.json';
       console.log(`Sensor: ${item.sensor}, Temperature: ${item.Temperature}, Humidity: ${item.Humidity}`);
     });
 
-    // Create the chart
+   
     new Chart(document.getElementById('data'), {
       type: 'line',
       data: {
